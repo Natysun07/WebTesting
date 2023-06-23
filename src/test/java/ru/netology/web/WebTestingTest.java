@@ -23,7 +23,8 @@ public class WebTestingTest {
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver(options);}
+        driver = new ChromeDriver(options);
+    }
 
     @BeforeAll
     static void setUpAll() {
@@ -36,10 +37,10 @@ public class WebTestingTest {
         driver = null;
     }
 
-   @Test
-   public void shouldOpenPage() {
-       open("http://localhost:9999");
-   }
+    @Test
+    public void shouldOpenPage() {
+        open("http://localhost:9999");
+    }
 
     @Test
     public void shouldSendBankForm() {
@@ -64,7 +65,7 @@ public class WebTestingTest {
     }
 
     @Test
-    public void  shouldEnterIncorrectPhone() {
+    public void shouldEnterIncorrectPhone() {
         open("http://localhost:9999");
         $(By.cssSelector("[data-test-id=name] input")).sendKeys("Бакулина Наталья");
         $(By.cssSelector("[data-test-id=phone] input")).sendKeys("+7 495 259-27-41");
